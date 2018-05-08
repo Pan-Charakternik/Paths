@@ -14,18 +14,15 @@ public class Main {
         Path path = FileSystems.getDefault().getPath("WorkingDirectoryFile.txt");
         printFile(path);
 
-        System.out.println("\n");
-
         Path filePath = FileSystems.getDefault().getPath("files","SubdirectoryFile.txt");
         printFile(filePath);
-
-        System.out.println("\n");
 
         filePath = Paths.get("C:\\Users\\Jakub_Jozwik\\IdeaProjects\\OutThere.txt");
         printFile(filePath);
     }
 
     private static void printFile(Path path){
+        System.out.println("\n");
         try(BufferedReader fileReader = Files.newBufferedReader(path)){
             String line;
             while ((line = fileReader.readLine()) != null){
