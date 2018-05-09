@@ -29,6 +29,18 @@ public class Main {
 
         System.out.println(path2.normalize().toAbsolutePath());
         printFile(path2.normalize());
+
+
+        Path path3 = FileSystems.getDefault().getPath("nonexisting.txt ");
+        System.out.println(path3.toAbsolutePath());
+
+        Path path4 = Paths.get("D:\\","abcdef.dat");
+        System.out.println(path4.toAbsolutePath());
+
+        filePath = FileSystems.getDefault().getPath("files");
+        System.out.println("Exits = " + Files.exists(filePath));
+
+        System.out.println("Exisis = " + Files.exists(path4));
     }
 
     private static void printFile(Path path){
